@@ -1,0 +1,107 @@
+
+
+<!-- 概要 -->
+<div class="header-main"> 
+ <div class="header-text-city">{{city}}</div>
+         <select class="header-text-chengecity" id='selectcity' ng-click="changecity(city)" ng-model="city">
+           <option value='北京'>北京</option> 
+           <option value='廊坊'>廊坊</option> 
+           <option value='保定'>保定</option> 
+           </select>
+
+ <div class="header-text-temperature">{{forecasts[0].temp1+"℃ ~ "+forecasts[0].temp2 +"℃"}} </div>
+ <div class="header-text-weather">{{forecasts[0].tq}}</div>
+ <div class="header-text-reminder">{{getreminder(forecasts[0].temp1)}} </div>
+</div>
+
+<!-- 5天天气预报 -->
+<br></br><br></br>
+<div class="content2"><h1 class="content2-text-title">天气预测</h1>
+  <div id="mychart" style="min-width:1000px;height:400px"></div><br></br>
+  <table class="content2-table">  <!-- 一行多列Table -->
+    <tr>
+      <td ng-repeat="forecast in forecasts" class= {{weatherpicture(forecast.tq)}}>
+        <div class="content2-text-data">  {{forecast.date}}  </div>
+        <div class="content2-text-temperature"> 温度：{{forecasts[0].temp1+"°C ~ "+forecasts[0].temp2 +"°C"}}</div>
+        <div class="content2-text-weather"> {{forecast.tq}}</div>
+        <div class="content2-text-wind">风向：{{forecast.wd}}</div>
+        <div class="content2-text-wind">风力：{{forecast.ws}}</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- 天气形势图 -->
+<br></br><br></br>
+<div class="content1"><h1 class="content1-text-title">天气形式图</h1>
+
+<table>
+    <tr>
+      <td>
+         <select class="content1-table-select" id='selecthpa' ng-change="changepic(hpa,hour)" ng-model="hpa">
+           <option value='850'>850hPa</option> 
+           <option value='925'>925hPa</option> 
+           <option value='1000'>10m/s</option> 
+           </select>
+         <select class="content1-table-select" id='selecthour' ng-change="changepic(hpa,hour)" ng-model="hour">
+           <option value='012'>12小时</option> 
+           <option value='024'>24小时</option> 
+           <option value='036'>36小时</option> 
+           <option value='048'>48小时</option> 
+           <option value='060'>60小时</option> 
+           <option value='072'>72小时</option> 
+           <option value='084'>84小时</option> 
+           <option value='096'>96小时</option> 
+           <option value='108'>108小时</option> 
+           <option value='120'>120小时</option> 
+           </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img style="border:2px solid #06C;" width="100%" id="weatherpicshow"}} >
+      </td>
+    </tr> 
+</table>
+</div>
+
+
+
+<!-- 所有城市污染情况 -->
+<br></br>
+<div class="content3">
+    <br></br> 
+<h1 class="content3-text-title">全国空气质量</h1>
+<br></br><div id="allmap"></div><br></br>
+<table cellspacing="5" class="content3-table">   <!-- 多行多列Table -->
+  <tr class="content3-table-tr"> <!-- 表头 -->
+       <td> <div> 最后更新时间</div> </td>
+       <td> <div> 城市 </div> </td>
+       <td> <div> 经度 </div> </td>
+       <td> <div> 纬度 </div> </td>
+       <td> <div> AQI </div> </td>
+       <td> <div> 二氧化硫 </div> </td>
+       <td> <div> 二氧化氮 </div> </td>
+       <td> <div> 臭氧 </div> </td>
+       <td> <div> pm10 </div> </td>
+       <td> <div> pm2.5 </div> </td>
+       <td> <div> 空气等级 </div> </td>
+       <td> <div> 主要污染物 </div> </td>
+  </tr>
+  <tr ng-repeat="monitor in monitors">
+       <td> <div> {{monitor.data_time}}</div> </td>
+       <td> <div> {{monitor.city_name}}</div> </td>
+       <td> <div> {{monitor.longitude}}</div> </td>
+       <td> <div> {{monitor.latitude}}</div> </td>
+       <td> <div> {{monitor.AQI}}</div> </td>
+       <td> <div> {{monitor.SO2}}</div> </td>
+       <td> <div> {{monitor.NO2}}</div> </td>
+       <td> <div> {{monitor.O3}}</div> </td>
+       <td> <div> {{monitor.pm10}}</div> </td>
+       <td> <div> {{monitor.pm25}}</div> </td>
+       <td> <div> {{monitor.level}}</div> </td>
+       <td> <div> {{monitor.main_pol}}</div> </td>
+   </tr>
+</table>
+</div>

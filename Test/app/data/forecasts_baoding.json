@@ -1,0 +1,5 @@
+[{"date":"今天","tq":"多云","temp1":"5","temp2":"-1","wd":"北风","ws":"4-5级","main_pol":"PM2.5","AQI":91.95833333333333,"level":"良","fore_lev":"yellow"},
+{"date":"明天","tq":"晴转多云","temp1":"7","temp2":"-6","wd":"北风","ws":"3-4级转微风","main_pol":"PM2.5","AQI":94.625,"level":"良","fore_lev":"yellow"},
+{"date":"后天","tq":"雪","temp1":"5","temp2":"-5","wd":"南风","ws":"微风","main_pol":"PM2.5","AQI":113.58333333333333,"level":"轻度污染","fore_lev":"qingdu"},
+{"date":"周六","tq":"雨","temp1":"1","temp2":"-12","wd":"东南风","ws":"微风","main_pol":"PM2.5","AQI":119.08333333333333,"level":"轻度污染","fore_lev":"qingdu"},
+{"date":"周日","tq":"晴","temp1":"-1","temp2":"-8","wd":"西南风","ws":"微风","main_pol":"PM2.5","AQI":107.0952380952381,"level":"轻度污染","fore_lev":"qingdu"}]
